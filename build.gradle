@@ -1,0 +1,63 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.learning'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    /*test*/
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    /*development*/
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    /*implementation*/
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-test:2.4.5'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.4.5'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest:2.4.5'
+    implementation 'org.springframework.session:spring-session-core'
+    implementation 'org.springframework.security:spring-security-crypto:5.4.5'
+    implementation 'org.springframework.security:spring-security-core:5.4.5'
+    implementation 'org.springframework.boot:spring-boot-configuration-processor:'
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'io.springfox:springfox-swagger2:3.0.0'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation 'com.amazonaws:aws-java-sdk:1.11.163'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation 'org.hibernate.validator:hibernate-validator:7.0.1.Final'
+    implementation 'mysql:mysql-connector-java:8.0.24'
+    implementation 'org.modelmapper:modelmapper:2.4.3'
+    /*compile time*/
+    compileOnly 'org.projectlombok:lombok'
+    /*run time*/
+    runtimeOnly 'com.h2database:h2'
+    /*annotations*/
+    annotationProcessor 'org.projectlombok:lombok'
+
+}
+repositories {
+    mavenCentral()
+}
+
+
+test {
+    useJUnitPlatform()
+}
